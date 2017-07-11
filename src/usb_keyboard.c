@@ -289,10 +289,10 @@ uint8_t usb_configured(void)
 
 
 // perform a single keystroke
-int8_t usb_keyboard_press(uint8_t key, uint8_t modifier)
+int8_t usb_keyboard_press(uint8_t key, uint8_t modifier, uint8_t pos)
 {
 	keyboard_modifier_keys = modifier;
-	keyboard_keys[0] = key;
+	keyboard_keys[pos] = key;
 	return usb_keyboard_send();
 }
 
